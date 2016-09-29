@@ -1,0 +1,39 @@
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:layout_width="264dp"
+            android:layout_height="match_parent"
+            android:id="@+id/queryTF" />
+
+
+        <Button
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:id="@+id/Bseach"
+            android:layout_gravity="right"
+            android:nestedScrollingEnabled="false"
+            android:onClick="onSearch" />
+
+
+    </LinearLayout>
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/map"
+    tools:context=".xmasMarketMapsActivity"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+</LinearLayout>
