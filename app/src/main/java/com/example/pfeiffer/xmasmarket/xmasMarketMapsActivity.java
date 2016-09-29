@@ -36,6 +36,8 @@ public class xmasMarketMapsActivity extends FragmentActivity {
     String urlJason = "http://giv-oct.uni-muenster.de:8081/api/query/"+myQuery+"?authorization="+APIKey;
 
 
+
+    // just a test message
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
