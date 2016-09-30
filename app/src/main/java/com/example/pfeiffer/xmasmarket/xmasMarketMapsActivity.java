@@ -35,6 +35,7 @@ public class xmasMarketMapsActivity extends FragmentActivity {
     String myQuery ="Social";
     String urlJason = "http://giv-oct.uni-muenster.de:8081/api/query/"+myQuery+"?authorization="+APIKey;
 
+//some test code
 
 
     // just a test message
