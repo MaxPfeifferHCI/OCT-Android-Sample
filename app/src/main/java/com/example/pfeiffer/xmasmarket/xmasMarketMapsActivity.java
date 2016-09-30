@@ -37,7 +37,6 @@ public class xmasMarketMapsActivity extends FragmentActivity {
 
 //some test code
 
-
     // just a test message
     @Override
     protected void onCreate(Bundle savedInstanceState) {
