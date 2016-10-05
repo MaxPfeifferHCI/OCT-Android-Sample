@@ -32,18 +32,16 @@ public class xmasMarketMapsActivity extends FragmentActivity {
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
     String APIKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfbmFtZSI6IlRlc3RfMTcuOCIsImlhdCI6MTQ3MTQyNjQwOH0.BiUS3cEKLzE-y2c2ci6eonVya7kCvDVU9z00Lkzk5bI";
-    String myQuery ="Social";
-    String urlJason = "http://giv-oct.uni-muenster.de:8081/api/query/"+myQuery+"?authorization="+APIKey;
+    String dataSetID = "weihnachtsmarkt2";
 
-//some test code
+    String urlOCT = "http://giv-oct.uni-muenster.de:8080/api/dataset/"+dataSetID+"?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfbmFtZSI6IlRlc3RfMTcuOCIsImlhdCI6MTQ3MTQyNjQwOH0.BiUS3cEKLzE-y2c2ci6eonVya7kCvDVU9z00Lkzk5bI";
 
-    // just a test message
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xmas_market_maps);
         EditText search = (EditText) findViewById(R.id.queryTF);
-        search.setText(myQuery);
+        search.setText(dataSetID);
 
 
         setUpMapIfNeeded();
@@ -70,10 +68,11 @@ public class xmasMarketMapsActivity extends FragmentActivity {
         EditText queryTF = (EditText) findViewById(R.id.queryTF);
         String myQuery = queryTF.getText().toString();
 
-        urlJason = "http://giv-oct.uni-muenster.de:8081/api/query/" + myQuery + "?authorization="+APIKey;
-        System.out.println(" urlJason " +urlJason);
+        urlOCT = "http://giv-oct.uni-muenster.de:8080/api/dataset/" + myQuery + "?authorization="+APIKey;
+        System.out.println(" urlJason " +urlOCT);
+        System.out.println("Data set URL " +urlOCT);
         final RequestQueue reQue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlJason,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlOCT,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -96,13 +95,10 @@ public class xmasMarketMapsActivity extends FragmentActivity {
     {
 
         try {
+
             JSONObject reader = new JSONObject(jsonString);
-            JSONObject tagQuary  = reader.getJSONObject("search_tag");
-            JSONObject resultsData = reader.getJSONObject("data").getJSONObject("couchDB");
-            JSONArray dataJSONArray = resultsData.getJSONArray("data");
-            JSONObject dataJsonObject = dataJSONArray.getJSONObject(0);
-            JSONObject previewObject =  dataJsonObject.getJSONObject("preview");
-            JSONArray featuresArray =  previewObject.getJSONArray("features");
+
+            JSONArray featuresArray =  reader.getJSONArray("features");
 
             for(int i=0; i < featuresArray.length(); i++) {
 
