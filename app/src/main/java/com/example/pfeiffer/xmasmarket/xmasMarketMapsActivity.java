@@ -32,7 +32,7 @@ public class xmasMarketMapsActivity extends FragmentActivity {
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
     String APIKey = ""; // Paste you OCT API Key here
-    String dataSetID = "xmas";// Paste you OCT data set ID here
+    String dataSetID = "";// Paste you OCT data set ID here
 
     String urlOCT = "http://giv-oct.uni-muenster.de:8080/api/dataset/"+dataSetID+"?authorization="+APIKey;
 
