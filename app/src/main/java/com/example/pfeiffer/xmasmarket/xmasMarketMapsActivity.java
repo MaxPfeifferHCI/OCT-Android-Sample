@@ -31,8 +31,8 @@ public class xmasMarketMapsActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
-    String APIKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfbmFtZSI6IlhtYXNNYXJrZXQiLCJpYXQiOjE0NzU3NTcwOTR9.gWgWZA1JPsw88tCC8n5qageX1EP3HuNMl9ng23cFvrw\n";//"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfbmFtZSI6IlRlc3RfMTcuOCIsImlhdCI6MTQ3MTQyNjQwOH0.BiUS3cEKLzE-y2c2ci6eonVya7kCvDVU9z00Lkzk5bI";
-    String dataSetID = "xmas";
+    String APIKey = ""; // Paste you OCT API Key here
+    String dataSetID = "xmas";// Paste you OCT data set ID here
 
     String urlOCT = "http://giv-oct.uni-muenster.de:8080/api/dataset/"+dataSetID+"?authorization="+APIKey;
 
