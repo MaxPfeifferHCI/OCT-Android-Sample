@@ -66,7 +66,6 @@ public class xmasMarketMapsActivity extends FragmentActivity {
         String myQuery = queryTF.getText().toString();
 
         urlOCT = "http://giv-oct.uni-muenster.de:8080/api/dataset/" + myQuery + "?authorization="+APIKey;
-        System.out.println(" urlJason " +urlOCT);
         System.out.println("Data set URL " +urlOCT);
         final RequestQueue reQue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, urlOCT,
